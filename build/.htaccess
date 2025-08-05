@@ -1,0 +1,9 @@
+# Enable mod_rewrite
+RewriteEngine On
+
+# 301 Redirect from www to non-www
+RewriteCond %{HTTP_HOST} ^www\.onedollarai\.com$ [NC]
+RewriteRule ^(.*)$ https://onedollarai.com/$1 [L,R=301]
+
+# Custom 404 page
+ErrorDocument 404 /404.html
